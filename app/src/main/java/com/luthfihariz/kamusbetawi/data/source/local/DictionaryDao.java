@@ -21,4 +21,10 @@ public interface DictionaryDao {
 
     @Query("SELECT * FROM dictionary WHERE terms LIKE :keyword")
     Publisher<List<Dictionary>> getDictionary(String keyword);
+
+    @Query("SELECT * FROM dictionary WHERE id = :id")
+    Publisher<Dictionary> getDictionary(int id);
+
+    @Query("SELECT COUNT(*) FROM dictionary")
+    Publisher<Integer> getDictionaryCount();
 }

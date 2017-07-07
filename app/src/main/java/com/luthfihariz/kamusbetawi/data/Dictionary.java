@@ -9,9 +9,14 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "dictionary")
 public class Dictionary {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String terms;
     private String desc;
+
+    public int getId() {
+        return id;
+    }
 
     public String getTerms() {
         return terms;
